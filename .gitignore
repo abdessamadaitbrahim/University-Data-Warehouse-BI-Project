@@ -1,0 +1,9 @@
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.database
+*.mdf
+*.ldf
+*.mp4

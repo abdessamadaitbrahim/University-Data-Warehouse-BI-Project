@@ -1,0 +1,1656 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/12/2025 4:12:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ABDESSAMAD"
+  DTS:CreatorName="ABDESSAMAD\Abdessamad"
+  DTS:DTSID="{1D97EA1A-2729-480B-ADDC-21E802FE7502}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="6145"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="65"
+  DTS:VersionGUID="{80DC7ED6-A95C-499C-BADA-11CCAEFA502D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Etudiant CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D83C3173-8E82-45EC-A2B2-096065FF3DE0}"
+      DTS:ObjectName="Etudiant CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="6145"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\projects\Projet_DW_Universite\01_Data_Sources\etudiants.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_etu"
+              DTS:DTSID="{CBEDBCD7-1B05-4EFC-94F4-6476BE42E90E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nom"
+              DTS:DTSID="{60075238-A984-4439-9D2A-D4757899A45C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sexe"
+              DTS:DTSID="{20B4CCB7-88B6-4062-B944-FD9D8B57DEEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{584211DE-4974-460F-9C18-CD3D9AE4B016}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[etudiants dirty csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A32722BA-973E-42D9-A473-B043767A9719}"
+      DTS:ObjectName="etudiants dirty csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="6145"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\projects\Projet_DW_Universite\07_Outputs\Etudiants_Dirty.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_etu"
+              DTS:DTSID="{07FEE0CB-6F82-4AD0-AD6B-6B71C55452BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nom"
+              DTS:DTSID="{8ED8FD61-155D-421C-A263-D057C499A3AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sexe"
+              DTS:DTSID="{43F0F214-BEF6-46DE-82B4-8380CE159E12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age"
+              DTS:DTSID="{73BFFAAC-12BA-479E-9570-2731EBC460FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nom_clean"
+              DTS:DTSID="{2F4DB328-E859-4CF4-A233-06A472DE23BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sexe_clean"
+              DTS:DTSID="{28F0DEA0-FA47-46B5-A177-9D25E79EB64E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_str"
+              DTS:DTSID="{BB3C4A89-1821-47D6-B1D9-FE504F5B8276}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_etu_int"
+              DTS:DTSID="{ED3D804D-36BB-4281-8210-25D8A24C2C6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="age_int"
+              DTS:DTSID="{170160E3-AAC7-4A0A-A196-267215284E5A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="32"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="raison_erreur"
+              DTS:DTSID="{4BF71278-E43C-4B8C-92FB-1C3C68C89D39}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{1F29AAE9-CB44-45E9-9D9F-380BB9845888}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\projects\Projet_DW_Universite\07_Outputs\etudiants_dirty.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\corriger_genre"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F1A683D7-A975-4363-B69E-AD47C33CDD90}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="corriger_genre"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3389F8FB-0440-4707-A8CA-86354C268104}"
+          SQLTask:SqlStatementSource="UPDATE STG_Etudiants&#xA;SET sexe = 'M'&#xA;WHERE nom IN (&#xA;    'ALI','ANAS','AYOUB','HAMZA','HASSAN','ILYAS','KARIM','KHALID',&#xA;    'NABIL','OMAR','RACHID','REDA','SALIM','SAMI','SAMIR','SOUFIANE',&#xA;    'YASSINE','YOUNES','YOUSSEF'&#xA;);&#xA;&#xA;UPDATE STG_Etudiants&#xA;SET sexe = 'F'&#xA;WHERE nom IN (&#xA;    'FATIMA','ILHAM','IMANE','KENZA','LINA','MANAL','MARWA','MERIEM',&#xA;    'MERYEM','MOUNA','NADIA','RANIA','SALIMA','SARA','SIHAM','ZINEB'&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT Charger dim_etudiant"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DAA00B43-0FA9-454B-86B8-11D580263F08}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT Charger dim_etudiant"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Ajouter Age Categorie"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Inputs[Derived Column Input].Columns[age_int]"
+                      cachedDataType="i4"
+                      cachedName="age_int"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Output].Columns[categorie_age]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Output].Columns[categorie_age]"
+                      name="categorie_age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &gt;= 18 &amp;&amp; #{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &lt;= 22 ? "18-22" : (#{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &gt;= 23 &amp;&amp; #{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &lt;= 27 ? "23-27" : "28+")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">age_int &gt;= 18 &amp;&amp; age_int &lt;= 22 ? "18-22" : (age_int &gt;= 23 &amp;&amp; age_int &lt;= 27 ? "23-27" : "28+")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Charger dim_etudiant\ajouter raison erreur"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="ajouter raison erreur"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Inputs[Derived Column Input].Columns[nom_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nom_clean"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Inputs[Derived Column Input].Columns[sexe_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="sexe_clean"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Inputs[Derived Column Input].Columns[age_int]"
+                      cachedDataType="i4"
+                      cachedName="age_int"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Output].Columns[raison_erreur]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="32"
+                      lineageId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Output].Columns[raison_erreur]"
+                      name="raison_erreur"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([ISNULL](#{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]}) || [LEN](#{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]}) == 0) ? "Nom vide" : ((#{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]} != "M" &amp;&amp; #{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]} != "F") ? "Sexe invalide (doit être M ou F)" : ([ISNULL](#{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]}) ? "Age non numérique" : ((#{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &lt; 18) ? "Age &lt; 18" : ((#{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &gt; 100) ? "Age &gt; 100" : "Erreur inconnue"))))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(ISNULL(nom_clean) || LEN(nom_clean) == 0) ? "Nom vide" : ((sexe_clean != "M" &amp;&amp; sexe_clean != "F") ? "Sexe invalide (doit être M ou F)" : (ISNULL(age_int) ? "Age non numérique" : ((age_int &lt; 18) ? "Age &lt; 18" : ((age_int &gt; 100) ? "Age &gt; 100" : "Erreur inconnue"))))</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Charger dim_etudiant\Convertir age en INT"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Convertir age en INT"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Inputs[Data Conversion Input].Columns[id_etu]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id_etu"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[id_etu]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Inputs[Data Conversion Input].Columns[age_str]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="age_str"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[age_str]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\Convertir age en INT.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[id_etu_int]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[id_etu_int]"
+                      name="id_etu_int"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[id_etu]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]"
+                      name="age_int"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[age_str]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\Convertir age en INT.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DC Nettoyage initial"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Inputs[Derived Column Input].Columns[nom]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nom"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[nom]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Inputs[Derived Column Input].Columns[sexe]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sexe"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[sexe]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Inputs[Derived Column Input].Columns[age]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="age"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]"
+                      name="nom_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM]([UPPER]([REPLACE]([REPLACE](#{Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[nom]},";"," "),"..."," ")))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(UPPER(REPLACE(REPLACE(nom,";"," "),"..."," ")))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]"
+                      name="sexe_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[UPPER]([TRIM](#{Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[sexe]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(TRIM(sexe))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[age_str]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[age_str]"
+                      name="age_str"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[age]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(age)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="6145"
+              name="FF Étudiants CSV Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Etudiant CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Etudiant CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[id_etu]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[id_etu]"
+                      length="50"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[id_etu]"
+                      name="id_etu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[nom]"
+                      length="50"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[nom]"
+                      name="nom"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[sexe]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[sexe]"
+                      length="50"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[sexe]"
+                      name="sexe"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      length="50"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[age]"
+                      name="age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[id_etu]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_etu" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[nom]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[sexe]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="sexe" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="age" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination 1 db staging dirty table"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_Etudiants_Dirty]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1256</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Connections[OleDbConnection]"
+                  connectionManagerID="{3389F8FB-0440-4707-A8CA-86354C268104}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Staging_DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].Columns[id_etu]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id_etu"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[id_etu]"
+                      lineageId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output].Columns[id_etu]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].Columns[raison_erreur]"
+                      cachedDataType="wstr"
+                      cachedLength="32"
+                      cachedName="raison_erreur"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[raison_erreur]"
+                      lineageId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Output].Columns[raison_erreur]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].Columns[age_str]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="age_str"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[age_str]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].Columns[nom_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nom_clean"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[nom]"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].Columns[sexe_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="sexe_clean"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[sexe]"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[id_etu]"
+                      dataType="i4"
+                      name="id_etu" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[nom]"
+                      dataType="wstr"
+                      length="100"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[sexe]"
+                      dataType="wstr"
+                      length="50"
+                      name="sexe" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      dataType="wstr"
+                      length="50"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input].ExternalColumns[raison_erreur]"
+                      dataType="wstr"
+                      length="200"
+                      name="raison_erreur" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination db staging non dirty"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_Etudiants]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1256</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Connections[OleDbConnection]"
+                  connectionManagerID="{3389F8FB-0440-4707-A8CA-86354C268104}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Staging_DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].Columns[categorie_age]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="categorie_age"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[categorie_age]"
+                      lineageId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Output].Columns[categorie_age]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].Columns[id_etu_int]"
+                      cachedDataType="i4"
+                      cachedName="id_etu_int"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[id_etu]"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[id_etu_int]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].Columns[nom_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nom_clean"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[nom]"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].Columns[sexe_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="sexe_clean"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[sexe]"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].Columns[age_int]"
+                      cachedDataType="i4"
+                      cachedName="age_int"
+                      externalMetadataColumnId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[id_etu]"
+                      dataType="i4"
+                      name="id_etu" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[nom]"
+                      dataType="wstr"
+                      length="100"
+                      name="nom" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[sexe]"
+                      dataType="wstr"
+                      length="50"
+                      name="sexe" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[age]"
+                      dataType="wstr"
+                      length="50"
+                      name="age" />
+                    <externalMetadataColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input].ExternalColumns[categorie_age]"
+                      dataType="wstr"
+                      length="10"
+                      name="categorie_age" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Séparer Clean vs Dirty"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input].Columns[nom_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="nom_clean"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input].Columns[sexe_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="sexe_clean"
+                      lineageId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]" />
+                    <inputColumn
+                      refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input].Columns[age_int]"
+                      cachedDataType="i4"
+                      cachedName="age_int"
+                      lineageId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Clean_Records]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Clean_Records"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[LEN]([TRIM](#{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[nom_clean]})) &gt; 0 &amp;&amp; (#{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]} == "M" || #{Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output].Columns[sexe_clean]} == "F") &amp;&amp; ![ISNULL](#{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]}) &amp;&amp; #{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &gt;= 18 &amp;&amp; #{Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output].Columns[age_int]} &lt;= 100</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">LEN(TRIM(nom_clean)) &gt; 0 &amp;&amp; (sexe_clean == "M" || sexe_clean == "F") &amp;&amp; !ISNULL(age_int) &amp;&amp; age_int &gt;= 18 &amp;&amp; age_int &lt;= 100</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Dirty_Records]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Dirty_Records"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT Charger dim_etudiant.Paths[Clean_Records]"
+              endId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Inputs[Derived Column Input]"
+              name="Clean_Records"
+              startId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Clean_Records]" />
+            <path
+              refId="Package\DFT Charger dim_etudiant.Paths[Data Conversion Output]"
+              endId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Inputs[Conditional Split Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT Charger dim_etudiant\Convertir age en INT.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT Charger dim_etudiant.Paths[Derived Column Output]"
+              endId="Package\DFT Charger dim_etudiant\Convertir age en INT.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Charger dim_etudiant.Paths[Derived Column Output1]"
+              endId="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Charger dim_etudiant\Ajouter Age Categorie.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Charger dim_etudiant.Paths[Derived Column Output2]"
+              endId="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT Charger dim_etudiant.Paths[Dirty_Records]"
+              endId="Package\DFT Charger dim_etudiant\ajouter raison erreur.Inputs[Derived Column Input]"
+              name="Dirty_Records"
+              startId="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty.Outputs[Dirty_Records]" />
+            <path
+              refId="Package\DFT Charger dim_etudiant.Paths[Flat File Source Output]"
+              endId="Package\DFT Charger dim_etudiant\DC Nettoyage initial.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer Staging to DW"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{81B317CD-0FB2-488D-B6F0-E2A3BC278DD2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer Staging to DW"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E56B572A-55F2-43A5-A438-FBE53B975645}"
+          SQLTask:SqlStatementSource="DELETE FROM fact_examens;&#xA;DELETE FROM dim_etudiant;&#xA;DBCC CHECKIDENT ('dim_etudiant', RESEED, 0);&#xA;INSERT INTO dim_etudiant (id_etudiant, nom, sexe, age, categorie_age)&#xA;SELECT &#xA;    id_etu, &#xA;    nom, &#xA;    sexe, &#xA;    age, &#xA;    categorie_age&#xA;FROM (&#xA;    SELECT &#xA;        id_etu, &#xA;        nom, &#xA;        sexe, &#xA;        age, &#xA;        categorie_age,&#xA;        ROW_NUMBER() OVER (PARTITION BY id_etu ORDER BY nom) as rn&#xA;    FROM DW_Universite_Staging.dbo.STG_Etudiants&#xA;) t&#xA;WHERE rn = 1;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F64D410-2766-427E-A4DE-57121FB7D016}"
+      DTS:From="Package\DFT Charger dim_etudiant"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\corriger_genre" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BE0EE538-5504-4C1A-B796-BFB41BBC299E}"
+      DTS:From="Package\corriger_genre"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Transfer Staging to DW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\corriger_genre"
+          TopLeft="331.428572134096,189.647058657296" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\DFT Charger dim_etudiant"
+          TopLeft="300.000000638621,84.8823528667738" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Transfer Staging to DW"
+          TopLeft="310.000000659909,296.705882092867" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="403.314286386359,126.482352866774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.1647057905225"
+              Start="0,0"
+              End="0,55.6647057905225">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.6647057905225" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="404.714286397002,231.247058657296">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.4588234355706"
+              Start="0,0"
+              End="0,57.9588234355706">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.9588234355706" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT Charger dim_etudiant">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\DFT Charger dim_etudiant\ajouter raison erreur"
+          TopLeft="723.979593377897,419.249999632511" />
+        <NodeLayout
+          Size="268,41.6"
+          Id="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty"
+          TopLeft="265.510204646834,540.26470540879" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\DFT Charger dim_etudiant\Convertir age en INT"
+          TopLeft="509.693878636025,223.949579635632" />
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\DFT Charger dim_etudiant\FF Étudiants CSV Source"
+          TopLeft="504.183674542663,46.9747898747911" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\DFT Charger dim_etudiant\DC Nettoyage initial"
+          TopLeft="516.938776610631,133.058823412781" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\DFT Charger dim_etudiant\Séparer Clean vs Dirty"
+          TopLeft="501.12245004635,294.302520750436" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\DFT Charger dim_etudiant\Ajouter Age Categorie"
+          TopLeft="300.000000638621,446.997898767853" />
+        <NodeLayout
+          Size="283.2,41.6"
+          Id="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table"
+          TopLeft="666.964287134077,546.464285235289" />
+        <EdgeLayout
+          Id="Package\DFT Charger dim_etudiant.Paths[Flat File Source Output]"
+          TopLeft="602.161225576647,88.5747898747912">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.4840335379894"
+              Start="0,0"
+              End="0,36.9840335379894">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.9840335379894" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Charger dim_etudiant.Paths[Dirty_Records]"
+          TopLeft="621.92245004635,335.902520750436">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="189.657143331547,83.3474788820747"
+              Start="0,0"
+              End="189.657143331547,75.8474788820747">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.7719654691004" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.7719654691004"
+                    Point2="0,33.7719654691004"
+                    Point3="4,33.7719654691004" />
+                  <mssgle:LineSegment
+                    End="185.657143331547,33.7719654691004" />
+                  <mssgle:CubicBezierSegment
+                    Point1="185.657143331547,33.7719654691004"
+                    Point2="189.657143331547,33.7719654691004"
+                    Point3="189.657143331547,37.7719654691004" />
+                  <mssgle:LineSegment
+                    End="189.657143331547,75.8474788820747" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="63.5159935407735,38.7719654691004,62.62515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Charger dim_etudiant.Paths[Derived Column Output1]"
+          TopLeft="390.800000638621,488.597898767853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.71020400821288,51.6668066409371"
+              Start="0,0"
+              End="8.71020400821288,44.1668066409371">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.8334033204685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.8334033204685"
+                    Point2="0,25.8334033204685"
+                    Point3="4,25.8334033204685" />
+                  <mssgle:LineSegment
+                    End="4.71020400821288,25.8334033204685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.71020400821288,25.8334033204685"
+                    Point2="8.71020400821288,25.8334033204685"
+                    Point3="8.71020400821288,29.8334033204685" />
+                  <mssgle:LineSegment
+                    End="8.71020400821288,44.1668066409371" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Charger dim_etudiant.Paths[Derived Column Output]"
+          TopLeft="600.516327623328,174.658823412781">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.2907562228517"
+              Start="0,0"
+              End="0,41.7907562228517">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.7907562228517" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Charger dim_etudiant.Paths[Data Conversion Output]"
+          TopLeft="595.408164341188,265.549579635632">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7529411148038"
+              Start="0,0"
+              End="0,21.2529411148038">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2529411148038" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Charger dim_etudiant.Paths[Clean_Records]"
+          TopLeft="563.52245004635,335.902520750436">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-172.722449407729,111.095378017417"
+              Start="0,0"
+              End="-172.722449407729,103.595378017417">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0152700538104" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.0152700538104"
+                    Point2="0,45.0152700538104"
+                    Point3="-4,45.0152700538104" />
+                  <mssgle:LineSegment
+                    End="-168.722449407729,45.0152700538104" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-168.722449407729,45.0152700538104"
+                    Point2="-172.722449407729,45.0152700538104"
+                    Point3="-172.722449407729,49.0152700538104" />
+                  <mssgle:LineSegment
+                    End="-172.722449407729,103.595378017417" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-119.581322360114,50.0152700538104,66.4401953125,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT Charger dim_etudiant.Paths[Derived Column Output2]"
+          TopLeft="810.071940255987,460.849999632511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85.6142856027777"
+              Start="0,0"
+              End="0,78.1142856027777">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.1142856027777" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Charger dim_etudiant\OLE DB Destination db staging non dirty">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Charger dim_etudiant\OLE DB Destination 1 db staging dirty table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,793 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/14/2025 12:48:05 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ABDESSAMAD"
+  DTS:CreatorName="ABDESSAMAD\Abdessamad"
+  DTS:DTSID="{0E05705D-0B79-4445-BB9D-DA341338782F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="6145"
+  DTS:ObjectName="ETL_Fact_Examens"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{496B5A9C-E97D-4AB6-822B-63E6368D5578}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[examen csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8360C993-2CCC-446B-902D-936D4E11106D}"
+      DTS:ObjectName="examen csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="6145"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\projects\Projet_DW_Universite\01_Data_Sources\examens.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_exam"
+              DTS:DTSID="{5A589010-9CE9-40F0-8479-442FE9AF31A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_etu"
+              DTS:DTSID="{B2C582CC-8387-40CC-91D9-C5FC5245CE6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id_cours"
+              DTS:DTSID="{80408812-216A-4BBA-B291-A10B6CADC112}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_exam"
+              DTS:DTSID="{EEE66757-9852-4CCB-9368-727B50774D4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="note"
+              DTS:DTSID="{BB9121CB-9A3A-4953-8870-00E5ED7B02B2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reussi"
+              DTS:DTSID="{16B41A23-DCAE-43CC-AB42-2E34E13C03A2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT cherger fact_examens"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{14BE8318-AEBE-42B6-928E-DE02B58C3F24}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT cherger fact_examens"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT cherger fact_examens\charger csv examens"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="6145"
+              name="charger csv examens"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT cherger fact_examens\charger csv examens.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[examen csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[examen csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_exam]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[id_exam]"
+                      length="50"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_exam]"
+                      name="id_exam"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_etu]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[id_etu]"
+                      length="50"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_etu]"
+                      name="id_etu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_cours]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[id_cours]"
+                      length="50"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_cours]"
+                      name="id_cours"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[date_exam]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[date_exam]"
+                      length="50"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[date_exam]"
+                      name="date_exam"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      length="50"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[note]"
+                      name="note"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[reussi]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[reussi]"
+                      length="50"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[reussi]"
+                      name="reussi"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[id_exam]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_exam" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[id_etu]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_etu" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[id_cours]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="id_cours" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[date_exam]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="date_exam" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[note]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="note" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].ExternalColumns[reussi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="reussi" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1256"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT cherger fact_examens\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT cherger fact_examens\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\Data Conversion.Inputs[Data Conversion Input].Columns[date_exam]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="date_exam"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[date_exam]" />
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\Data Conversion.Inputs[Data Conversion Input].Columns[reussi]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="reussi"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[reussi]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT cherger fact_examens\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output].Columns[date_exam_clean]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output].Columns[date_exam_clean]"
+                      name="date_exam_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[date_exam]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output].Columns[reussi_clean]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="3"
+                      lineageId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output].Columns[reussi_clean]"
+                      name="reussi_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[reussi]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT cherger fact_examens\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination vers  table de examen de database de staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_Examens]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1256</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Connections[OleDbConnection]"
+                  connectionManagerID="{3389F8FB-0440-4707-A8CA-86354C268104}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Staging_DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].Columns[id_exam]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id_exam"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[id_exam]"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_exam]" />
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].Columns[id_etu]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id_etu"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[id_etu]"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_etu]" />
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].Columns[id_cours]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="id_cours"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[id_cours]"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[id_cours]" />
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].Columns[note]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="note"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[note]"
+                      lineageId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output].Columns[note]" />
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].Columns[date_exam_clean]"
+                      cachedDataType="dbDate"
+                      cachedName="date_exam_clean"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[date_exam]"
+                      lineageId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output].Columns[date_exam_clean]" />
+                    <inputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].Columns[reussi_clean]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="reussi_clean"
+                      externalMetadataColumnId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[reussi]"
+                      lineageId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output].Columns[reussi_clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[id_exam]"
+                      dataType="i4"
+                      name="id_exam" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[id_etu]"
+                      dataType="i4"
+                      name="id_etu" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[id_cours]"
+                      dataType="i4"
+                      name="id_cours" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[date_exam]"
+                      dataType="wstr"
+                      length="10"
+                      name="date_exam" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[note]"
+                      dataType="numeric"
+                      name="note"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input].ExternalColumns[reussi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="reussi" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT cherger fact_examens.Paths[Data Conversion Output]"
+              endId="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT cherger fact_examens\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DFT cherger fact_examens.Paths[Flat File Source Output]"
+              endId="Package\DFT cherger fact_examens\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\DFT cherger fact_examens\charger csv examens.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EST data de stgaing --&gt; DW_universite"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8B5B6C27-C396-40E2-A352-F03CB4E8E87A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EST data de stgaing --&gt; DW_universite"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E56B572A-55F2-43A5-A438-FBE53B975645}"
+          SQLTask:SqlStatementSource="DELETE FROM fact_examens;&#xA;&#xA;INSERT INTO fact_examens (&#xA;    SK_Etudiant,&#xA;    SK_Cours,&#xA;    SK_Date,&#xA;    SK_Reussite,&#xA;    id_examen,&#xA;    note,&#xA;    reussi&#xA;)&#xA;SELECT&#xA;    e.SK_Etudiant,&#xA;    c.SK_Cours,&#xA;    d.SK_Date,&#xA;    CASE&#xA;        WHEN s.note &gt;= 16 THEN 1&#xA;        WHEN s.note &gt;= 12 THEN 2&#xA;        WHEN s.note &gt;= 10 THEN 3&#xA;        ELSE 4&#xA;    END,&#xA;    s.id_exam,&#xA;    s.note,&#xA;    s.reussi&#xA;FROM DW_Universite_Staging.dbo.STG_Examens s&#xA;INNER JOIN dim_etudiant e ON s.id_etu = e.id_etudiant&#xA;INNER JOIN dim_cours c ON s.id_cours = c.id_cours&#xA;INNER JOIN dim_date d ON s.date_exam = d.date_complete&#xA;WHERE s.note IS NOT NULL&#xA;  AND s.id_etu IS NOT NULL&#xA;  AND s.id_cours IS NOT NULL&#xA;  AND s.date_exam IS NOT NULL;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{75FB7C18-EBCE-4FE5-84D4-000322BDF6D2}"
+      DTS:From="Package\DFT cherger fact_examens"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\EST data de stgaing --&gt; DW_universite" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\DFT cherger fact_examens"
+          TopLeft="170.714286077692,60.4117646529291" />
+        <NodeLayout
+          Size="263.2,41.6"
+          Id="Package\EST data de stgaing --&gt; DW_universite"
+          TopLeft="148.571428887698,149.117646928116" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="276.642857482695,102.011764652929">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.105882275187"
+              Start="0,0"
+              End="0,39.605882275187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.605882275187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT cherger fact_examens">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177.6,41.6"
+          Id="Package\DFT cherger fact_examens\charger csv examens"
+          TopLeft="251.428571963797,12.999999988605" />
+        <NodeLayout
+          Size="391.2,41.6"
+          Id="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging"
+          TopLeft="150.714286035117,151.411764573164" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\DFT cherger fact_examens\Data Conversion"
+          TopLeft="263.571429132503,87.1764705118217" />
+        <EdgeLayout
+          Id="Package\DFT cherger fact_examens.Paths[Flat File Source Output]"
+          TopLeft="340.70000054815,54.599999988605">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.5764705232168"
+              Start="0,0"
+              End="0,25.0764705232168">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0764705232168" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT cherger fact_examens.Paths[Data Conversion Output]"
+          TopLeft="343.74285758381,128.776470511822">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.6352940613421"
+              Start="0,0"
+              End="0,15.1352940613421">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1352940613421" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT cherger fact_examens\OLE DB Destination vers  table de examen de database de staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
